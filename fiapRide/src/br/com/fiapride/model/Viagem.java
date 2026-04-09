@@ -1,5 +1,7 @@
 package br.com.fiapride.model;
 
+import br.com.fiap.model.Veiculo;
+
 public class Viagem {
     
     // 1. Atributos Simples

@@ -1,4 +1,4 @@
-package br.com.fiapride.model;
+package br.com.fiap.model;
 
 public class Veiculo {
 
