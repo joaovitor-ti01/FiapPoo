@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-import br.com.fiap.model.Veiculo;
+import br.com.fiapride.model.Veiculo;
 
 public class Viagem {
     

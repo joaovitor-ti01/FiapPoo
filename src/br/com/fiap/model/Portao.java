@@ -8,79 +8,55 @@ public class Portao {
     private boolean aberto;
 
     public Portao(String materialEstrutura, String cor, boolean temVidro, boolean trancado, boolean aberto) {
-        this.setMaterialEstrutura(materialEstrutura);
-        this.setCor(cor);
-        this.setTemVidro(temVidro);
-        this.setTrancado(trancado);
-        this.setAberto(aberto);
+        this.materialEstrutura = materialEstrutura;
+        this.cor = cor;
+        this.temVidro = temVidro;
+        this.trancado = trancado;
+        this.aberto = aberto;
+    }
+
+    public void abrir() {
+        if (trancado) {
+            System.out.println("Não é possível abrir: portão trancado");
+        } else if (aberto) {
+            System.out.println("O portão já está aberto");
+        } else {
+            System.out.println("Abrindo portão...");
+            aberto = true;
+        }
+    }
+
+    public void fechar() {
+        if (!aberto) {
+            System.out.println("O portão já está fechado");
+        } else {
+            System.out.println("Fechando portão...");
+            aberto = false;
+        }
     }
 
     public void trancar() {
-        if (this.aberto == false && this.trancado == false) {
-            System.out.println("Trancando o Portão");
+        if (aberto) {
+            System.out.println("Não pode trancar com o portão aberto");
+        } else if (trancado) {
+            System.out.println("Já está trancado");
+        } else {
+            System.out.println("Trancando portão");
+            trancado = true;
         }
     }
 
     public void destrancar() {
-        if (!this.aberto && !this.trancado) {
-            System.out.println("Trancando o portão");
-            this.trancado = true;
+        if (!trancado) {
+            System.out.println("Já está destrancado");
+        } else {
+            System.out.println("Destrancando portão");
+            trancado = false;
         }
     }
 
-    public void exibir() {
-        System.out.println("Aberto: " + this.aberto);
-        System.out.println("Trancado: " + this.trancado);
-        System.out.println("Tem vidro: " + this.temVidro);
-        System.out.println("Material do Portão: " + this.materialEstrutura);
-        System.out.println("Cor: " + this.cor);
-        System.out.println("----------------------");
-    }
-
-    public void abrir(){
-        System.out.println("Abrindo");
-    }
-    public void fechar(){
-        System.out.println("Fechando");
-    }
-
-    public String getMaterialEstrutura() {
-        return materialEstrutura;
-    }
-
-    public void setMaterialEstrutura(String materialEstrutura) {
-        this.materialEstrutura = materialEstrutura;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public boolean isTemVidro() {
-        return temVidro;
-    }
-
-    public void setTemVidro(boolean temVidro) {
-        this.temVidro = temVidro;
-    }
-
-    public boolean isTrancado() {
-        return trancado;
-    }
-
-    public void setTrancado(boolean trancado) {
-        this.trancado = trancado;
-    }
-
-    public boolean isAberto() {
-        return aberto;
-    }
-
-    public void setAberto(boolean aberto) {
-        this.aberto = aberto;
-    }
+    // getters e setters
+    public boolean isTrancado() { return trancado; }
+    public boolean isAberto() { return aberto; }
+    public void setAberto(boolean aberto) { this.aberto = aberto; }
 }
