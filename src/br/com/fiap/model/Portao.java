@@ -1,6 +1,6 @@
 package br.com.fiap.model;
 
-public class Portao {
+public abstract class Portao {
     private String materialEstrutura;
     private String cor;
     private boolean temVidro;
@@ -15,22 +15,13 @@ public class Portao {
         this.aberto = aberto;
     }
 
-    public void abrir() {
-        if (trancado) {
-            System.out.println("Não é possível abrir: portão trancado");
-        } else if (aberto) {
-            System.out.println("O portão já está aberto");
-        } else {
-            System.out.println("Abrindo portão...");
-            aberto = true;
-        }
-    }
+    public abstract void abrir();
 
     public void fechar() {
         if (!aberto) {
-            System.out.println("O portão já está fechado");
+            System.out.println("Portão já está fechado");
         } else {
-            System.out.println("Fechando portão...");
+            System.out.println("Fechando portão");
             aberto = false;
         }
     }

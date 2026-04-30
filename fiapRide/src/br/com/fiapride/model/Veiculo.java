@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Veiculo {
+public abstract class Veiculo {
     private String placa;
     private String modelo;
     private double nivelCombustivel;
@@ -30,6 +30,8 @@ public class Veiculo {
             System.out.println("❌ Erro de Validação: A placa informada é inválida!");
         }
     }
+
+    public abstract void exibirTipo();
 
     public String calcularAutonomia() {
         return "Autonomia não definida para um veículo genérico.";
